@@ -45,6 +45,7 @@ export default function Layout({ children }: IProps) {
             '& .MuiDrawer-paper': {
               width: 240,
               boxSizing: 'border-box',
+              boxShadow: '4px 1px 13px 0px rgba(0,0,0,0.2)',
             },
           }}
           variant="permanent"
