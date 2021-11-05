@@ -27,7 +27,7 @@ interface IProps {
 
 export default function Layout({ children }: IProps) {
   const history = useHistory();
-  const [locale, setLocale] = useState('');
+  const [locale, setLocale] = useState('/');
 
   function goto(path: string) {
     history.push(path);

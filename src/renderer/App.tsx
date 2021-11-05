@@ -2,6 +2,7 @@ import { MemoryRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Layout from './components/Layout';
 import Config from './pages/Config';
+import Home from './pages/Home';
 
 const Hello = () => {
   return <div></div>;
@@ -13,7 +14,7 @@ export default function App() {
       <Layout>
         <Switch>
           <Route path="/config" component={Config} />
-          <Route path="/" component={Hello} />
+          <Route path="/" component={Home} />
         </Switch>
       </Layout>
     </Router>
