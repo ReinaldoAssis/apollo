@@ -16,6 +16,7 @@ import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
 import { resolveHtmlPath } from './util';
+import * as Apollo from './server';
 
 export default class AppUpdater {
   constructor() {
@@ -70,6 +71,8 @@ const createWindow = async () => {
   const getAssetPath = (...paths: string[]): string => {
     return path.join(RESOURCES_PATH, ...paths);
   };
+
+  Apollo.server();
 
   mainWindow = new BrowserWindow({
     show: false,

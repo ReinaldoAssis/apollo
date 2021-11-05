@@ -4,10 +4,6 @@ import Layout from './components/Layout';
 import Config from './pages/Config';
 import Home from './pages/Home';
 
-const Hello = () => {
-  return <div></div>;
-};
-
 export default function App() {
   return (
     <Router>

@@ -17,6 +17,7 @@ export default function Home() {
         </Button>
       </div>
       <p>Response:</p>
+      <Button variant="contained">Start Server</Button>
     </>
   );
 }
