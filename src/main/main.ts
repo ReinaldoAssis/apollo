@@ -16,7 +16,10 @@ import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
 import { resolveHtmlPath } from './util';
+
 import * as Apollo from './server';
+import axios from 'axios';
+require('dotenv').config();
 
 export default class AppUpdater {
   constructor() {
@@ -32,6 +35,16 @@ ipcMain.on('ipc-example', async (event, arg) => {
   const msgTemplate = (pingPong: string) => `IPC test: ${pingPong}`;
   console.log(msgTemplate(arg));
   event.reply('ipc-example', msgTemplate('pong'));
+});
+
+ipcMain.handle('apollo-talk', async (_, msg) => {
+  let result = null;
+  await axios.get(`http://127.0.0.1:7000/talk?msg=${msg}`).then((d: any) => {
+    result = d.data;
+  });
+  console.log('RESULT');
+  console.log(result);
+  return result;
 });
 
 if (process.env.NODE_ENV === 'production') {

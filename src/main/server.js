@@ -5,7 +5,7 @@ let nlp = null;
 
 export async function server() {
   const _app = express();
-  const port = 3000;
+  const port = process.env.APOLLO_SERVER_PORT;
 
   const dock = await dockStart({ use: ['Basic'] });
 
