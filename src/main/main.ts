@@ -42,8 +42,6 @@ ipcMain.handle('apollo-talk', async (_, msg) => {
   await axios.get(`http://127.0.0.1:7000/talk?msg=${msg}`).then((d: any) => {
     result = d.data;
   });
-  console.log('RESULT');
-  console.log(result);
   return result;
 });
 

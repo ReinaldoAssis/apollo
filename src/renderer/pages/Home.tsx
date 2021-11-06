@@ -16,8 +16,6 @@ export default function Home() {
 
   async function talk(msg: string) {
     const retorno = await window.electron.ipcRenderer.talk(msg);
-    console.log('AOOO TALK');
-    console.log(retorno);
     return retorno;
   }
 

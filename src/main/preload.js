@@ -8,10 +8,7 @@ contextBridge.exposeInMainWorld('electron', {
       ipcRenderer.send('ipc-example', 'ping');
     },
     async talk(msg) {
-      const result = await ipcRenderer.invoke('apollo-talk', msg);
-      console.log('AOOO IPC');
-      console.log(result);
-      return result;
+      return await ipcRenderer.invoke('apollo-talk', msg);
     },
     on(channel, func) {
       const validChannels = ['ipc-example', 'apollo-talk'];
